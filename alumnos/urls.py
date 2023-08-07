@@ -6,7 +6,7 @@ app_name = 'alumnos'
 urlpatterns = [
     path( '', views.index, name='index' ),
     path( 'formulario', views.formulario, name='formulario'), 
-    path( '<int:alumno_idgit>', views.index, name='listaAlum' )
+    path( 'detalle/<int:alumno_id>', views.index, name='listaAlum' )
         
 ]
 
