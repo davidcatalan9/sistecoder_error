@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+<h1>Listado de Alumnos</h1>
+
+<a href="{% url 'alumnos:formulario' %}">Agregar Alumno</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+        </tr>
+    </thead>
+
+    <body>
+        {% for alumn in alumnos %}
+        
+         <tr>
+            <td> 
+                <a href="{% url 'alumnos:listaAlum' alumn.id %}">{{ alumn.rut }}</a>
+            </td>
+            <td>{{ alumn.id }}</td>
+            <td>{{ alumn.nombre }}</td>
+            <td>{{ alumn.apellido }}</td>
+            <td>{{ alumn.direccion }}</td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+
+{% endblock content %}
