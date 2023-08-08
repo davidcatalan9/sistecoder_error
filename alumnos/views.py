@@ -27,7 +27,7 @@ def detalle( request, alumnos_id ):
     
     # alumnosd = Alumnos.objects.get(id=alumnos_id)
     
-    import pdb ; pdb.set_trace()
+    # import pdb ; pdb.set_trace()
     print( alumnosd) 
     return render(
         request, 'detalle.html',

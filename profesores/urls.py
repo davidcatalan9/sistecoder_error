@@ -6,5 +6,5 @@ app_name = 'profesor'
 urlpatterns = [
     path( ''                 , views.index     , name='index' ),
     path( 'formulario'       , views.formulario, name="formulario"),
-    path( '<int:profesor_id>', views.detalle   , name='detalle' )
+    path( 'detalleProf/<int:profesor_id>', views.detalleProf   , name='detalleProf' )
 ]

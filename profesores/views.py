@@ -19,12 +19,12 @@ def index(request):
 
     #return HttpResponse(profesores[0].nombre)
     
-def detalle(request, profesor_id):
+def detalleProf(request, profesor_id):
         profesor = get_object_or_404(Profesor, id=profesor_id)
     
         return render(
             request,
-            'detalle.html', 
+            'detalleProf.html', 
             context= { 'profesor': profesor } )
     
     
