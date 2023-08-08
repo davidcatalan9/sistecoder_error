@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+<p>prueba de formulario alum_dat </p>
+
+ {% for alum_dat in alumn_list %}
+ import pdb; pdb.set_trace()
+ print( alum_list.rut )
+ rut{{ alumnos.rut }} - nombre{{ alumnos.nombre }} - apellido{{ alum_dat.apellido }} - direccion{{ alum_dat.direccion }}</br>
+ {% endfor %}
+ 
+ 
+ 
+ <div>
+    <h6>{{ alumnos.rut }}</h6>
+    <p>{{ alumnos.nombre }}</p>
+    <p>{{ alumnos.apellido }}</p>
+    <p>{{ alumnos.direccion }}</p>
+ </div>
+
+  
+ {% endblock content %}

@@ -23,9 +23,9 @@ def index(request):
     
     
 def detalle( request, alumnos_id ):
-    alumnosd = get_object_or_404(Alumnos, id=alumnos_id)
+    # alumnosd =  get_object_or_404(Alumnos, id=alumnos_id)
     
-    # alumnosd = Alumnos.objects.get(id=alumnos_id)
+    alumnosd = Alumnos.objects.get(id=alumnos_id)
     
     # import pdb ; pdb.set_trace()
     print( alumnosd) 
