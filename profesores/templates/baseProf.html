@@ -1,41 +1,54 @@
 {% extends 'base.html' %}
-
+{% block titulo %} Profesores {% endblock%}
 {% block content %}
-<h1>Profesores</h1>
+{% comment %} <h1>Profesores</h1> {% endcomment %}
 
-<a href="{% url 'profesor:formulario' %}">Agregar</a>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Profesion</th>
-            <th>e-mail</th>           
-            <th>Curso</th>           
-        </tr> 
-    </thead>
+<div class="card">
+    <div class="card-header">
+        Listado de Profesores
+    </div>
+    <div class="card-body">
+        {% comment %} <h4 class="card-title">Agregar </h4>
+        <p class="card-text">Text</p> {% endcomment %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Profesion</th>
+                    <th>e-mail</th>           
+                    <th>Curso</th>           
+                </tr> 
+            </thead>
+            <body>
+                
+                {% for profesor in profesores %}
+                
+                <tr>
+                    <td>
+                        <a href="{% url 'profesor:detalleProf' profesor.id %}">
+                            {{profesor.nombre}}
+                        </a>
+                    </td>
+                    <td>{{profesor.apellido}}</td>
+                    <td>{{profesor.profesion}}</td>
+                    <td>{{profesor.email}}</td>
+                    <td>{{profesor.curso}}</td>
+                </tr>
+                
+                {% endfor %} 
+                
+            </body>
+        </table> 
+    </div>
     
-    <body>
-
-        {% for profesor in profesores %}
-        
-        <tr>
-            <td>
-                <a href="{% url 'profesor:detalleProf' profesor.id %}">
-                    {{profesor.nombre}}
-                </a>
-            </td>
-            <td>{{profesor.apellido}}</td>
-            <td>{{profesor.profesion}}</td>
-            <td>{{profesor.email}}</td>
-            <td>{{profesor.curso}}</td>
-        </tr>
-        
-        {% endfor %} 
-        
-    </body>
+    <div class="card-footer text-muted">
+        <a href="{% url 'profesor:formulario' %}">Agregar</a>
+        <a href="{% url 'profesor:formulario' %}">Volver</a>
+    </div>
     
-</table>
+    
+</div>
 
 {%endblock content%}

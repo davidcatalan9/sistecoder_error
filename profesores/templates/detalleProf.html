@@ -1,11 +1,26 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block titulo %} Profesores {% endblock%} {% block
+content %}
 
-{% block content %}
-<div>
-    <h5>{{profesor.nombre}}</h5>
-    <p>{{profesor.profesion}}</p>
-    <p>{{profesor.email}}</p>
-    <p>{{profesor.fechaNacimiento}}</p>
-    <p>{{profesor.curso}}</p>
+<div class="card">
+  <div class="card-header">
+    Informacion Profesaor:
+    <h4>{{profesor.nombre }} {{profesor.apellido }}</h4>
+  </div>
+  <div class="card-body">
+    {% comment %}
+    <h4 class="card-title">profesor:</h4>
+    {% endcomment %} {% comment %}
+    <p class="card-text">Text</p>
+    {% endcomment %}
+    <div>
+      <p>Profesion : {{profesor.profesion}}</p>
+      <p>E-mail : {{profesor.email}}</p>
+      <p>Fecha de Nacimiento: {{profesor.fechaNacimiento}}</p>
+      <p>Curso : {{profesor.curso}}</p>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <a href="{% url 'profesor:formulario' %}">Volver</a>
+  </div>
 </div>
 {% endblock content %}
