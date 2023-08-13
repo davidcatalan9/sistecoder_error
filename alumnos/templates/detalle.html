@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
  {% block content %}
-<p>prueba de formulario alum_dat </p>
+<p>prueba de formulario alumnos </p>
 
- {% for alum_dat in alumn_list %}
+ {% for alumnos in alumn_list %}
  import pdb; pdb.set_trace()
  print( alum_list.rut )
- rut{{ alum_dat.rut }} - nombre{{ alum_dat.nombre }} - apellido{{ alum_dat.apellido }} - direccion{{ alum_dat.direccion }}</br>
+ rut{{ alumnos.rut }} - nombre{{ alumnos.nombre }} - apellido{{ alumnos.apellido }} - direccion{{ alumnos.direccion }}</br>
  {% endfor %}
  
  

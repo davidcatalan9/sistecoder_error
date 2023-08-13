@@ -22,7 +22,7 @@ def index(request):
     )
     
     
-def detalle( request, alumnos_id ):
+def detalleNew( request, alumnos_id ):
     # alumnosd =  get_object_or_404(Alumnos, id=alumnos_id)
     
     alumnosd = Alumnos.objects.get(id=alumnos_id)
@@ -51,15 +51,3 @@ def formulario(request):
     )
     
     
-""" def formulario(request):
-    if request.method == 'POST':
-        form = ProfesorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/profesores')
-    else:
-        form = ProfesorForm()
-             
-    return render(
-        request, 'profesor_form.html', {'form': form} 
-    ) """
