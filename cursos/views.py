@@ -17,8 +17,8 @@ def listaCursos(request):
 
 def detalleCurso(request, curso_id):
     cursoDet = Curso.objects.get(id=curso_id)
-    
+    print(cursoDet)
     return render(
         request, 'detalleCurso.html', 
-        context={'cursos':cursoDet}
+        context={'curso':cursoDet}
         )

@@ -4,25 +4,18 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="col-4">
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Title</h3>
-        <p class="card-text">Text</p>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-header">
+    <h2>Detalle Curso: {{ curso.id }} </h2>
   </div>
-  <div class="col-4">
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title">Title</h3>
-        <p class="card-text">Text</p>
-      </div>
-    </div>
+  <div class="card-body">
+      <p>Nombre: {{ curso.nombre }}</p>
+      <p>Camada: {{ curso.camada }}</p>
+  </div>
+  <div class="card-footer text-muted">
+    Volver 
   </div>
 </div>
-
 
 
 {% endblock content %}
