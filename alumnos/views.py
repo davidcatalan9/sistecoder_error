@@ -30,7 +30,7 @@ def detalleNew( request, alumnos_id ):
     # import pdb ; pdb.set_trace()
     print( alumnosd) 
     return render(
-        request, 'detalle.html',
+        request, 'detalleAlum.html',
         context={'alumnos':alumnosd}
         )
    

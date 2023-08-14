@@ -1,34 +1,43 @@
-{% extends 'base.html' %}
- 
+{% extends 'base.html'%} 
+{% block titulo %} Alumnos {% endblock titulo %}
+
 {% block content %}
-<h1>Listado de Alumnos</h1>
 
-<a href="{% url 'alumnos:formulario' %}">Agregar Alumno</a>
-
-<table class="table">
-    <thead>
+<div class="card">
+  <div class="card-header">
+    <h2>Listado de Alumnos</h2>
+  </div>
+  <div class="card-body">
+{% comment %}     <h4 class="card-title">Title</h4>
+    <p class="card-text">Text</p>
+ {% endcomment %}    <table class="table">
+      <thead>
         <tr>
-            <th>Rut</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Direccion</th>
+          <th>Rut</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Direccion</th>
         </tr>
-    </thead>
-
-    <body>
+      </thead>
+      <body>
         {% for alumn in alumnos %}
-        
-         <tr>
-            <td> 
-                <a href="{% url 'alumnos:listaAlum' alumn.id %}">{{ alumn.rut }}</a>
-            </td>
-            <td>{{ alumn.id }}</td>
-            <td>{{ alumn.nombre }}</td>
-            <td>{{ alumn.apellido }}</td>
-            <td>{{ alumn.direccion }}</td>
+
+        <tr>
+          <td>
+            <a href="{% url 'alumnos:listaAlum' alumn.id %}">{{ alumn.rut }}</a>
+          </td>
+          {% comment %} <td>{{ alumn.id }}</td> {% endcomment %}
+          <td>{{ alumn.nombre }}</td>
+          <td>{{ alumn.apellido }}</td>
+          <td>{{ alumn.direccion }}</td>
         </tr>
         {% endfor %}
-    </body>
-</table>
+      </body>
+    </table>
+  </div>
+  <div class="card-footer text-muted">
+    <a href="{% url 'alumnos:formulario' %}">Agregar Alumno</a>
+  </div>
+</div>
 
 {% endblock content %}
