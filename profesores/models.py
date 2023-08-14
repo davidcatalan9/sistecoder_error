@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-from alumnos.models import Alumnos
+# from alumnos.models import Alumnos
 
 
 # Create your models here.
@@ -29,7 +29,7 @@ class Profesor(models.Model):
     
 class Trabajos(models.Model):
     nombre = models.CharField(max_length=15)
-    descripcion = models.CharField(100)
+    descripcion = models.CharField(max_length=100)
     fechaVence = models.DateField()
     nota = models.IntegerField()
     curso = models.ForeignKey( Curso, on_delete=models.DO_NOTHING )
