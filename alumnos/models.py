@@ -1,6 +1,6 @@
 from django.db import models
 
-from profesores.models import Curso
+from profesores.models import Curso, Trabajos
 
 # Create your models here.
 class Alumnos(models.Model):
@@ -10,6 +10,7 @@ class Alumnos(models.Model):
     direccion = models.CharField(max_length=40)
     ciudad = models.CharField(max_length=30)
     curso = models.ForeignKey( Curso, on_delete=models.DO_NOTHING )
+    trabajos = models.ForeignKey( Trabajos, on_delete=models.DO_NOTHING)
     
     def __str__(self):
         return ( self.nombre + " " +self.apellido )

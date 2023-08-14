@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'django.forms',
     'alumnos.apps.AlumnosConfig',
     'profesores.apps.ProfesoresConfig',
-    'cursos.apps.CursosConfig'
+    'cursos.apps.CursosConfig',
+    'trabajos'
+
     
 ]
 
