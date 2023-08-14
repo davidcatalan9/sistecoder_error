@@ -4,6 +4,35 @@
 
 {% block content %}
 
+<div class="card">
+    <div class="card-header">
+        Listado de Cursos 
+    </div>
+    <div class="table-responsive-md">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Camada</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in cursos %}
+                <tr class="">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.camada }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="card-footer text-muted">
+        Volver
+    </div>
+</div>
 
 
 
