@@ -13,7 +13,6 @@ from .models import Alumnos
 
 def index(request):
     AlumnosData = Alumnos.objects.all()
-    
   
     return render(
         request,
