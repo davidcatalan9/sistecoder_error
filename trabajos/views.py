@@ -4,8 +4,15 @@ from django.shortcuts import render
 # Create your views here.
 import trabajos
 
+from profesores.models import Trabajos
 
 
 
-def trabajos(request):
-    return
+def listaTrabajos(request):
+    TrabajosLis = Trabajos.objects.all()
+    
+    return render(
+        request, 
+        'listaTrabajos.html',
+        context={'trabajos':TrabajosLis}
+    )

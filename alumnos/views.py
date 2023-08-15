@@ -7,9 +7,6 @@ from .forms import AlumnosForm
 
 from .models import Alumnos
 # Create your views here.
- 
- 
-
 
 def index(request):
     AlumnosData = Alumnos.objects.all()

@@ -7,7 +7,9 @@ class ProfesorAdmin( admin.ModelAdmin):
 class CursoAdmin(admin.ModelAdmin):
     exclude = ('creacion',)
     list_display = ('id', 'nombre')
-
+    
+class TrabajosAdmin(admin.ModelAdmin):
+    list_display = ('id','nombre','descripcion')
     
 # Register your models here.
 admin.site.register(Profesor, ProfesorAdmin)
