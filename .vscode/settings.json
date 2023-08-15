@@ -5,6 +5,7 @@
         "Alumnosd",
         "apellido",
         "ciudad",
+        "creacion",
         "cursos",
         "detalle",
         "formulario",
@@ -17,5 +18,9 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "workbench.tree.indent": 20,
+    "workbench.view.alwaysShowHeaderActions": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "window.autoDetectColorScheme": true
 }
