@@ -9,8 +9,6 @@
         <h2>Listado de Profesores </h2>
     </div>
     <div class="card-body">
-        {% comment %} <h4 class="card-title">Agregar </h4>
-        <p class="card-text">Text</p> {% endcomment %}
         <table class="table">
             <thead>
                 <tr>
@@ -18,7 +16,8 @@
                     <th>Apellido</th>
                     <th>Profesion</th>
                     <th>e-mail</th>           
-                    <th>Curso</th>           
+                    <th>Curso</th> 
+                    <th>Acciones</th> 
                 </tr> 
             </thead>
             <body>
@@ -44,8 +43,9 @@
     </div>
     
     <div class="card-footer text-muted">
-        <a href="{% url 'profesor:formulario' %}">[ Agregar Profesor ]</a>
-        <a href="{% url 'inicio' %}">[ Volver ]</a>
+        <a class="btn btn-success" href="{% url 'profesor:formulario' %}"> Agregar Profesor</a>
+        <a class="btn btn-primary" href="{% url 'inicio' %}">Volver</a>
+        {% comment %} <a class="btn btn-primary btn-sm" href="{% url 'inicio' %}">Volver</a> {% endcomment %}
     </div>
     
     
