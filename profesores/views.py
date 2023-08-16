@@ -33,7 +33,7 @@ def modificaProf(request, profesor_id ):
                 form.save()
                 return HttpResponseRedirect('/profesores')
         else:
-            form = ProfesorForm()
+            form = ProfesorForm(instance=profesor)
         
         return render(
             request,
