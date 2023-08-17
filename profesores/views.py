@@ -1,11 +1,12 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 from .forms import ProfesorForm
 from .models import Profesor
 
 # Create your views here.
-
+@login_required
 def index(request):
     profesores = Profesor.objects.all()
     
@@ -15,7 +16,7 @@ def index(request):
         context= {'profesores': profesores } 
     )
 
-    
+@login_required    
 def detalleProf(request, profesor_id):
         profesor = get_object_or_404(Profesor, id=profesor_id)
     
@@ -23,7 +24,9 @@ def detalleProf(request, profesor_id):
             request,
             'detalleProf.html', 
             context= { 'profesor': profesor } )
-        
+
+
+@login_required        
 def modificaProf(request, profesor_id ):
         profesor = get_object_or_404( Profesor, id=profesor_id)
     
@@ -41,6 +44,7 @@ def modificaProf(request, profesor_id ):
             {'form':form} )
     
     
+@login_required
 def formulario(request):
     if request.method == 'POST':
         form = ProfesorForm(request.POST)

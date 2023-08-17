@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 import alumnos
 
@@ -7,7 +8,7 @@ from .forms import AlumnosForm
 
 from .models import Alumnos
 # Create your views here.
-
+@login_required
 def index(request):
     AlumnosData = Alumnos.objects.all()
   
@@ -17,7 +18,8 @@ def index(request):
         context={'alumnos':AlumnosData }
     )
     
-    
+
+@login_required    
 def detalleNew( request, alumnos_id ):
     # alumnosd =  get_object_or_404(Alumnos, id=alumnos_id)
     
@@ -30,7 +32,8 @@ def detalleNew( request, alumnos_id ):
         context={'alumnos':alumnosd}
         )
    
-   
+
+@login_required   
 def formulario(request):
     if request.method == 'POST':
         form = AlumnosForm(request.POST)

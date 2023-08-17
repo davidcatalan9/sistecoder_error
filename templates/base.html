@@ -65,13 +65,13 @@
                                 <a class="dropdown-item" href="#">Editar datos</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"><strong>Cerrar Sesión</strong></a>
+                                <a class="dropdown-item" href="{% url 'loginSistema:logout' %}"><strong>Cerrar Sesión</strong></a>
                             </li>
                         </ul>
                     </div>
                     {% else %}
                     <a class="btn btn-primary" href="{% url 'loginSistema:login' %}">Iniciar sesión</a>
-                    <a class="btn btn-success" href="{% url 'loginSistema:logout' %}">Registrarse</a>
+                    <a class="btn btn-success" href="#">Registrarse</a>
                     {% endif %}
 
 
