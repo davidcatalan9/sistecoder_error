@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
-from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 def login_view(request):
     if request.method == 'POST':
@@ -18,5 +17,7 @@ def login_view(request):
     
     return render(request, 'login.html', {'form': form})
 
-
+def logout_v(request):
+    logout(request)
+    return redirect('inicio')
 
