@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from django.forms.renderers import TemplatesSetting
+from django.urls import reverse_lazy
 
 class CustomFormRenderer(TemplatesSetting):
     form_template_name = 'form_snippet.html'
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'alumnos.apps.AlumnosConfig',
     'profesores.apps.ProfesoresConfig',
     'cursos.apps.CursosConfig',
-    'trabajos.apps.TrabajosConfig'
+    'trabajos.apps.TrabajosConfig',
+    'loginSistema'
     
 ]
 
@@ -116,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-CL'
 
 TIME_ZONE = 'UTC'
 
@@ -134,3 +136,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL = reverse_lazy('inicio')
